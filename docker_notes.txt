@@ -1,0 +1,43 @@
+pull images
+============
+docker pull <image_name>:<tag>
+
+list images:
+============
+docker images
+
+remove images:
+==============
+docker rmi <image_name>:<tag>
+
+run image:
+=========4
+docker run [flags] <images>:<tag>
+
+ex: docker run --rm --name redis -p 6379:6379 redis
+
+--rm - to remove container once stopped
+--name - to specify name of the container
+-p - to expose a port to localhost
+-d - to run in background
+-v - to add volume to containers
+
+
+container list
+==============
+docker ps [flag]
+
+-a - list all containers including stopped containers
+
+access container terminal
+=========================
+
+docker exec -it <container_name> [bash|sh]
+
+-it - interactive mode with a terminal
+
+container logs
+==============
+docker logs -f <container_name>
+
+-f - to stream logs
