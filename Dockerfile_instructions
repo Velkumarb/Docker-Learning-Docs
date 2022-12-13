@@ -1,0 +1,101 @@
+Dockerfile Instructions
+************************
+
+
+ENTRYPOINT--->* ENTRYPOINT instruction allows you to configure a container that will run as an executable.
+
+              * The difference is ENTRYPOINT command and parameters are not ignored when Docker container runs with command line parameters.
+  
+              * It looks similar to CMD, because it also allows you to specify a command with parameters.
+
+              * ENTRYPOINT is also closely related to CMD and can modify the way a container starts an image
+
+
+ENV       --->* ENV is mainly meant to provide default values for your future environment variables.
+
+              * Running dockerized applications can access environment variables.
+
+
+ARG       --->* ARG for building your Docker image.
+
+              * ARG instruction defines a variable that can be passed at build time.
+
+              * Once it is defined in the Dockerfile you can pass with this flag --build-arg while building the image.
+
+      	      * We can have multiple ARG instruction in the Dockerfile.
+
+              * ARG is the only instruction that can precede the FROM instruction in the Dockerfile.
+
+
+
+ADD       --->* The ADD command is used to copy files/directories into a Docker image.
+
+              * The command copies files/directories to a file system of the specified container.(Ex syntax: ADD /source/file/path  /destination/path)
+
+              * ADD can also copy files from a URL.
+
+              *  It can copy data in three ways:
+
+                 (i) Copy files from the local storage to a destination in the Docker image.
+
+                 (ii) Copy a tarball from the local storage and extract it automatically inside a destination in the Docker image.
+                         (A Tarball is a commonly used name to refer to an archive file in the tar (Tape Archive) format.) 	
+
+
+RUN       --->* RUN is an image build step, the state of the container after a RUN command will be committed to the container image. 
+
+              * A Dockerfile can have many RUN steps that layer on top of one another to build the image.
+ 
+              * RUN instruction allows you to install your application and packages required for it.
+
+              * RUN  command triggers while we build the docker image.
+
+               
+  
+
+
+CMD       --->* CMD is the command the container executes by default when you launch the built image. 
+
+              * A Dockerfile will only use the final CMD defined. 
+
+              * CMD command triggers while we launch the created docker image.
+
+              * CMD instruction allows you to set a default command, which will be executed only when you run container without specifying a command.
+
+              * CMD lets you define a default command to run when your container starts.
+
+
+
+
+
+
+
+
+
+  |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+    ✔️  ADD--> copies the files from a source on the host into the container’s own filesystem at the set destination.
+
+    ✔️  CMD-->  can be used for executing a specific command within the container.
+
+    ✔️  ENTRYPOINT--> sets a default application to be used every time a container is created with the image.
+
+    ✔️  ENV--> sets environment variables.
+
+    ✔️  EXPOSE--> associates a specific port to enable networking between the container and the outside world.
+
+    ✔️  FROM--> defines the base image used to start the build process.
+
+    ✔️  MAINTAINER--> defines a full name and email address of the image creator.
+
+    ✔️  RUN--> is the central executing directive for Dockerfiles.
+
+    ✔️  USER --> sets the UID (or username) which is to run the container.
+
+    ✔️  VOLUME--> is used to enable access from the container to a directory on the host machine.
+
+    ✔️  WORKDIR--> sets the path where the command, defined with CMD, is to be executed.
+
+    ✔️  LABEL--> allows you to add a label to your docker image.
+
